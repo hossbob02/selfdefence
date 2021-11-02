@@ -1,0 +1,42 @@
+<div style="background-color:black; width: 100%; height: 1000px;">
+
+
+    <div class="uk-position-center uk-overlay uk-overlay-default">
+        <form #f="ngForm" (ngSubmit)="login(f)">
+
+            <div class="uk-margin">
+                <div class="uk-inline">
+                    <span class="uk-form-icon" uk-icon="icon: user"></span>
+                    <input class="uk-input" type="email" #email="ngModel" ngModel name="email" required>
+                    <div
+                class="uk-alert-danger"
+                uk-alert
+                *ngIf="email.invalid && email.touched"
+              >
+                <p>Email is required</p>
+              </div>
+                </div>
+            </div>
+        
+            <div class="uk-margin">
+                <div class="uk-inline">
+                    <span class="uk-form-icon uk-form-icon-flip" uk-icon="icon: lock"></span>
+                    <input class="uk-input" type="password" #password="ngModel" ngModel name="password" required>
+                    <div
+                class="uk-alert-danger"
+                uk-alert
+                *ngIf="password.invalid && password.touched"
+              >
+                <p>Password is required</p>
+              </div>
+                </div>
+            </div>
+            <button class="uk-button uk-button-secondary" [disabled]="f.invalid" style="width:100%">Login</button>
+        </form>
+        
+
+    </div>
+    
+
+
+</div>
